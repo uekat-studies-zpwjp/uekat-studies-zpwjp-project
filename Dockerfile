@@ -17,5 +17,5 @@ ARG CACHEBUST=1
 
 COPY . .
 
-CMD [ "python", "./main.py" ]
+CMD [ "python", "/app/main.py" ]
 
