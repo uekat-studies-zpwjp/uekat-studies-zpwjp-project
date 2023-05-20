@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    python:
+        build:
+            context: .
+            args:
+                - PYTHON_IMAGE_VERSION=${PYTHON_IMAGE_VERSION}
+        platform: linux/x86_64
+        ports:
+            - ${PYTHON_PORT}:8000
+        volumes:
+            - .:/app:ro
+            - ./data:/var/www/html/data/:rw
+            - ./var:/var/www/html/var/:rw
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+        networks:
+            - backend
+
+networks:
+    backend:
