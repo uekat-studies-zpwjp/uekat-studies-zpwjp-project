@@ -16,7 +16,7 @@ app = FastAPI(
     Login: test2
     Password: cde3$RFV
     """,
-    version="1.0.0",
+    version="1.0.1",
     license_info={
         "name": "MIT",
         "url": "https://github.com/uekat-studies-zpwjp/uekat-studies-zpwjp-project",
