@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+    php:
+        image: ghcr.io/uekat-studies-zpwjp/uekat-studies-zpwjp-project-python:${PYTHON_IMAGE_TAG}
+        platform: linux/x86_64
+        working_dir: /app
+        ports:
+            - ${PYTHON_PORT}:8000
+        volumes:
+            - app_data:/app:ro
+            - .env:/var/www/html/.env:ro
+            - ./data:/var/www/html/data/:rw
+            - ./var:/var/www/html/var/:rw
+        networks:
+            - backend
+
+volumes:
+    app_data:
+
+networks:
+    backend:
