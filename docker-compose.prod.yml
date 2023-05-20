@@ -9,8 +9,6 @@ services:
         volumes:
             - app_data:/app:ro
             - .env:/var/www/html/.env:ro
-            - ./data:/var/www/html/data/:rw
-            - ./var:/var/www/html/var/:rw
         networks:
             - backend
 
