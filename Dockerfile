@@ -9,13 +9,14 @@ RUN apk update
 RUN apk upgrade
 RUN apk add bash git
 
+WORKDIR /app
+
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Custom cache invalidation
 ARG CACHEBUST=1
 
-COPY . .
+COPY main.py .
 
-CMD [ "python", "/app/main.py" ]
-
+CMD [ "python", "main.py" ]
